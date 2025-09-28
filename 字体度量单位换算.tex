@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+
+% https://ctan.org/pkg/booktabs
+\usepackage{booktabs} % booktabs – Publication quality tables in LaTeX
+
+\usepackage{ctex} % ctex – LaTeX classes and packages for Chinese typesetting
+\setmainfont{Times New Roman}
+
+\usepackage{geometry} % geometry – Flexible and complete interface to document dimensions
+% 5.1 Paper size
+% paper papername
+% specifies the paper size by name. paper=<paper-name>
+\geometry{a4paper}
+% landscape switches the paper orientation to landscape mode
+\geometry{landscape}
+% 5.4 Margin size
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\usepackage{multicol} % multicol – Intermix single and multiple columns
+
+\usepackage{siunitx} % siunitx – A comprehensive (SI) units package
+
+\usepackage{tabularx} % tabularx – Tabulars with adjustable-width columns
+
+\usepackage{threeparttable} % threeparttable – Tables with captions and notes all the same width
+
+% https://latexref.xyz/Floats.html
+% Parameters relating to fractions of pages occupied by float and non-float text (change them with \renewcommand{parameter}{decimal between 0 and 1}):
+% The maximum fraction of the page allowed to be occupied by floats at the bottom; default ‘.3’.
+\renewcommand{\bottomfraction}{0.00} % 页面中必须保留的最小文本比例
+% The minimum fraction of a float page that must be occupied by floats; default ‘.5’.
+\renewcommand{\floatpagefraction}{0.90} % 页面中必须保留的最小文本比例
+% Minimum fraction of a page that must be text; if floats take up too much space to preserve this much text, floats will be moved to a different page. The default is ‘.2’.
+\renewcommand{\textfraction}{0.00} % 页面中必须保留的最小文本比例
+% Maximum fraction at the top of a page that may be occupied before floats; default ‘.7’.
+\renewcommand{\topfraction}{1.00}
+% Maximum number of floats that can appear at the top of a text page; default 2.
+\setcounter{topnumber}{4}
+ % Maximum number of floats that can appear on a text page; default 3. 
+%\setcounter{totalnumber}{10}
+
+\begin{document}
+    
+    {\centering \zihao{3} \kaishu \LaTeX{}}
+
+    % https://cn.overleaf.com/learn/latex/Lengths_in_LaTeX
+
+    % https://en.wikibooks.org/wiki/LaTeX/Lengths   		
+	\begin{table}[h]
+		\centering
+		\caption{中文字号度量单位换算}
+		\setlength{\tabcolsep}{2pt}
+		\begin{tabularx}{\textwidth}{r l r l r l l}
+			\toprule
+			\multicolumn{2}{c}{中文字号} & \multicolumn{2}{c}{点 (TeX Point, pt)} & \multicolumn{2}{c}{磅值 Word | 大点 (Big Point, bp) | PostScript Point} &   \\
+			\midrule
+			{\zihao{0}    初号} & \verb|\zihao{0}| & {\fontsize{42.15749pt}{0} 初号} & \verb|\fontsize{42.157500pt}{0}| & {\fontsize{42bp}{0} 初号} & \verb|\fontsize{42bp}{0}| &   \\
+			{\zihao{-0} 小初号} & \verb|\zihao{-0}| & {\fontsize{36.135pt}{0} 小初号} & \verb|\fontsize{36.135000pt}{0}| & {\fontsize{36bp}{0} 小初号} & \verb|\fontsize{36bp}{0}| &   \\
+			{\zihao{1}    一号} & \verb|\zihao{1}| & {\fontsize{26.0975pt}{0} 一号} & \verb|\fontsize{26.097500pt}{0}| & {\fontsize{26bp}{0} 一号} & \verb|\fontsize{26bp}{0}| &   \\
+			{\zihao{-1} 小一号} & \verb|\zihao{-1}| & {\fontsize{24.09pt}{0} 小一号} & \verb|\fontsize{24.090000pt}{0}| & {\fontsize{24bp}{0} 小一号} & \verb|\fontsize{24bp}{0}| &   \\
+			{\zihao{2}    二号} & \verb|\zihao{2}| & {\fontsize{22.0825pt}{0} 二号} & \verb|\fontsize{22.082500pt}{0}| & {\fontsize{22bp}{0} 二号} & \verb|\fontsize{22bp}{0}| &   \\
+			{\zihao{-2} 小二号} & \verb|\zihao{-2}| & {\fontsize{18.0675pt}{0} 小二号} & \verb|\fontsize{18.067500pt}{0}| & {\fontsize{18bp}{0} 小二号} & \verb|\fontsize{18bp}{0}| &   \\
+			{\zihao{3}    三号} & \verb|\zihao{3}| & {\fontsize{16.06pt}{0} 三号} & \verb|\fontsize{16.060000pt}{0}| & {\fontsize{16bp}{0} 三号} & \verb|\fontsize{16bp}{0}| &   \\
+			{\zihao{-3} 小三号} & \verb|\zihao{-3}| & {\fontsize{15.05624pt}{0} 小三号} & \verb|\fontsize{15.056240pt}{0}| & {\fontsize{15bp}{0} 小三号} & \verb|\fontsize{15bp}{0}| &   \\
+			{\zihao{4}    四号} & \verb|\zihao{4}| & {\fontsize{14.0525pt}{0} 四号} & \verb|\fontsize{14.052500pt}{0}| & {\fontsize{14bp}{0} 四号} & \verb|\fontsize{14bp}{0}| &   \\
+			{\zihao{-4} 小四号} & \verb|\zihao{-4}| & {\fontsize{12.045pt}{0} 小四号} & \verb|\fontsize{12.045000pt}{0}| & {\fontsize{12bp}{0} 小四号} & \verb|\fontsize{12bp}{0}| &   \\
+			{\zihao{5}    五号} & \verb|\zihao{5}| & {\fontsize{10.539375pt}{0} 五号} & \verb|\fontsize{10.539375pt}{0}| & {\fontsize{10.5bp}{0} 五号} & \verb|\fontsize{10.5bp}{0}| &   \\
+			{\zihao{-5} 小五号} & \verb|\zihao{-5}| & {\fontsize{9.03375pt}{0} 小五号} & \verb|\fontsize{9.033750pt}{0}| & {\fontsize{9bp}{0} 小五号} & \verb|\fontsize{9bp}{0}| &   \\
+			{\zihao{6}    六号} & \verb|\zihao{6}| & {\fontsize{7.528125pt}{0} 六号} & \verb|\fontsize{7.528125pt}{0}| & {\fontsize{7.5bp}{0} 六号} & \verb|\fontsize{7.5bp}{0}| &   \\
+			{\zihao{-6} 小六号} & \verb|\zihao{-6}| & {\fontsize{6.524375pt}{0} 小六号} & \verb|\fontsize{6.524375pt}{0}| & {\fontsize{6.5bp}{0} 小六号} & \verb|\fontsize{6.5bp}{0}| &   \\
+			{\zihao{7}    七号} & \verb|\zihao{7}| & {\fontsize{5.520625pt}{0} 七号} & \verb|\fontsize{5.520625pt}{0}| & {\fontsize{5.5bp}{0} 七号} & \verb|\fontsize{5.5bp}{0}| &   \\
+			{\zihao{8}    八号} & \verb|\zihao{8}| & {\fontsize{5.01875pt}{0} 八号} & \verb|\fontsize{5.018750pt}{0}| & {\fontsize{5bp}{0} 八号} & \verb|\fontsize{5bp}{0}| &   \\
+			\bottomrule
+	    \end{tabularx}
+	\end{table}
+	
+     \(1\, pt = \frac{1}{72.27}\, in\) \quad \(1\, bp = \frac{1}{72}\, in\) \quad \(1\, bp = 1.00375\, pt\) \quad \(1\, in = 2.54\, cm\) \quad \(1\, in \approx 0.035145980\, cm\)
+	
+\end{document}
