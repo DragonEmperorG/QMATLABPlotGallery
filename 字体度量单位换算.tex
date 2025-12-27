@@ -15,6 +15,9 @@
 \geometry{landscape}
 % 5.4 Margin size
 \geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+% 5.6 Drivers
+% shows visible fram shows visible frames for the text area and page, and the lines for the head and foot on
+%\geometry{showframe}
 
 \usepackage{multicol} % multicol – Intermix single and multiple columns
 
@@ -23,6 +26,9 @@
 \usepackage{tabularx} % tabularx – Tabulars with adjustable-width columns
 
 \usepackage{threeparttable} % threeparttable – Tables with captions and notes all the same width
+
+\usepackage{tikz} % pgf – Create PostScript and PDF graphics in TeX
+\usetikzlibrary{positioning}
 
 % https://latexref.xyz/Floats.html
 % Parameters relating to fractions of pages occupied by float and non-float text (change them with \renewcommand{parameter}{decimal between 0 and 1}):
@@ -39,9 +45,22 @@
  % Maximum number of floats that can appear on a text page; default 3. 
 %\setcounter{totalnumber}{10}
 
+% https://www.latex-project.org/help/documentation/classes.pdf
+% When a floating object is placed on a page with text, these parameters control the
+% separation between the float and the other objects on the page. These parameters
+% are used for both one-column mode and single-column floats in two-column mode.
+% \floatsep is the space between adjacent floats that are moved to the top or bottom of the text page. 
+\setlength{\floatsep}{0.5\baselineskip} 
+% \textfloatsep is the space between the main text and floats at the top or bottom of the page.
+\setlength{\textfloatsep}{0.5\baselineskip} 
+% \intextsep is the space between in-text floats and the text.
+\setlength{\intextsep}{0.5\baselineskip} 
+
 \begin{document}
     
-    {\centering \zihao{3} \kaishu \LaTeX{}}
+    \begin{center}
+        \zihao{3} \kaishu \LaTeX{} 字体度量单位换算
+    \end{center}
 
     % https://cn.overleaf.com/learn/latex/Lengths_in_LaTeX
 
@@ -74,6 +93,15 @@
 	    \end{tabularx}
 	\end{table}
 	
-     \(1\, pt = \frac{1}{72.27}\, in\) \quad \(1\, bp = \frac{1}{72}\, in\) \quad \(1\, bp = 1.00375\, pt\) \quad \(1\, in = 2.54\, cm\) \quad \(1\, in \approx 0.035145980\, cm\)
+    \(1\, pt = \frac{1}{72.27}\, in\) \quad \(1\, bp = \frac{1}{72}\, in\) \quad \(1\, bp = 1.00375\, pt\) \quad \(1\, in = 2.54\, cm\) \quad \(1\, pt \approx 0.035145980\, cm\)
+    
+    \newpage
+    
+	\begin{tikzpicture}
+		\coordinate (C1) at (0,0);
+		
+		\node [above right=0cm and 0 cm of C1.south west,text=blue] {\fontsize{42bp}{0}\selectfont 初号};
+		\node [above right=0cm and 0 cm of C1.south west,text=red] {\fontsize{42.157500pt}{0}\selectfont 初号};
+	\end{tikzpicture}
 	
 \end{document}
